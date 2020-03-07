@@ -48,7 +48,7 @@ export class TaskRunnerService {
                 }
                 processStatus.item = item;
                 processStatus.name = file;
-                const tasks: Task[] = this.taskCreatorService.create(encoded_content)
+                const tasks: Task[] = this.taskCreatorService.create(file)
                 const tasks$: Observable<any> [] = [];
                 const taskNames: string [] = [];
                 for(const task of tasks){
