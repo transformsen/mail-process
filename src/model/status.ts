@@ -1,0 +1,9 @@
+export enum STATUS {
+    SUCCESS = 'SUCCESS',
+    PENDING = 'PENDING',
+    COMPLETED = 'COMPLETED',
+    FAILURE = 'FAILURE',
+    INPROGRESS = 'INPROGRESS',
+    RETRY = 'RETRY',
+    ORPHAN = 'ORPHAN'
+}
