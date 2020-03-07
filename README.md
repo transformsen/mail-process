@@ -5,6 +5,7 @@
 ### Instructions on how to configure the API/processor
 #### API
 * Update the DB details in .development.env file. (I have tested with my mongo and but disabled password)
+* uncomment and comment the uri in app.module.ts
 * Swagger - http://localhost:3000/api - (POST Job)
 #### Process
 * Process will automatically start when you start the server.
