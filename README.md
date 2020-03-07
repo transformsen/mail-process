@@ -8,20 +8,21 @@
 * Swagger - http://localhost:3000/api - (POST Job)
 #### Process
 * Process will automatically start when you start the server.
-* Place any file inside the ./watch directory for the current folder
+* Place any file inside the ./watch directory of the current folder. I placed one file for running it default.
+* I have introduced error in mock for testing the retry logic. On console logs you can see error and retry information.
 
 ### Instructions on how to verify
 #### API
 * Swagger - http://localhost:3000/api - (GET Job). See the created job here
 #### Process
-* When you add new file to the ./watch Directory, it will the workflow and output will display on console.
+* When you add new file to the ./watch Directory, it will trigger the workflow and output will display on console.
 
 ### Design details
 | Design Key | Design Details |
 | ----- | ---- |
 | Model | All the model files are under modle directory |
 | Stream | Stream and RXJS reactive concepts are used for processing and work flow |
-| Watcher (MSQ) | QueueWatcher is the abstract class. DirectoryWatcher is implementation. And change in the create new Watcher by extending QueueWatcher. New Watcher can be updated in module providers - useClass. Using the Watcher has been abstracted |
+| Watcher (MSQ) | QueueWatcher is the abstract class. DirectoryWatcher is the implementation. Incase of AWS implementation, just implement the contract for QueueWatcher and update it on app.module - providers |
 | Job Runner (COMPDB) | This service is responsible for running the workflow/tasks in give order asynchronosly | 
 | Job Creater | Create the tasks blue print. Any new jobs can be added here. It will be used by Job runner |
 | Upload/Event | Upload and Event service will do their respective jobs and handles the retry and recording appempts it made |
